@@ -1,0 +1,20 @@
+common: &common
+  app_name: SkillZillion
+  app_url: http://www.skillzillion.com
+  host: skillzillion.com
+  admin_email: admin@parkerhill.com
+  company_name: SkillZillion Corp.
+  contact_email: ksteinberg@cambridgerad.com
+  
+development:
+  domain: localhost:3000
+  <<: *common
+
+test:
+  domain: test.host
+  <<: *common
+
+production:
+  domain: example.com
+  <<: *common
+

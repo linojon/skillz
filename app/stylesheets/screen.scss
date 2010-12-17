@@ -1,0 +1,123 @@
+@import "compass";
+@include reset-html5;
+
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page";
+@import "partials/form";
+@import "partials/two_col";
+
+@import "partials/fancy-button";
+@import "partials/simple_form";
+@import "partials/utility";
+
+
+#container {
+  background:url("/images/skillzillion-logo.jpg") no-repeat scroll 10px 10px #FFFFFF; 
+}
+#container > header {
+  height:100px;
+  nav {
+    @include horizontal-list;
+    float: right;
+    text-align: right;
+  }
+}
+
+#content {
+  padding: 0 2em;
+  min-height: 450px;
+  margin: 20px auto 50px;
+  width: 800px;
+  
+  table {
+    a {
+      padding: 0 1em;
+    }
+    .ui-button-text {
+      font-size: 0.7em;
+      font-weight: bold;
+    }
+  }
+}
+
+#flashbar {
+  margin: 1em;
+  font-size: 150%;
+  text-align: center; 
+  #flash_error, #flash_alert {
+    @include error;
+  }
+  #flash_notice {
+    @include notice;
+  }
+  #flash_success {
+    @include success;
+  }
+  #flash_error, #flash_alert, #flash_notice, #flash_success {
+    @include border-radius(4px, 4px);
+    padding: 0;
+  }
+}
+
+footer {
+  clear: both;
+  background: #ddd;
+  color: #888;
+  padding: 3px 1em;
+  .copyright {
+    text-align: right;
+  }
+}
+
+//------------------------
+#home_page {
+  #content {
+    width: auto;
+    h2 {
+      text-align: center;
+    }
+  }
+  .signin_panel {
+    float: right;
+    font-size: 80%; 
+    //width: 250px;
+    
+    .signin, .signup {
+      float: left;
+      text-align: left;
+      margin: 0 1em;
+      padding: 1em;
+      width: 160px;
+      background-color: #eee;
+      @include clearfix;
+      label {
+        display:block;
+        margin: 2px 0;
+        text-align: left;
+      }
+      label.boolean {
+        display: inline;
+      }
+      input[type='email'],input[type='password'] { 
+        width: 150px;
+      }
+      input[type='submit'] {
+        margin: 2px 0;
+        float: right;
+      }
+      p {
+        margin: 1em 0;
+        float: right;
+      }
+    }
+  }
+}

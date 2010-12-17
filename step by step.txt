@@ -1,0 +1,31 @@
+-----------------------------
+Wed Dec 15, 2010
+
+  $ mkdir skillz
+  $ cd skillz
+  $ git clone  git@github.com:linoj/starter3.git
+  move everything from starter3/ . except .git
+  
+Fri Dec 17
+  .rvmrc
+  initial pages
+    app_config.yml
+    home
+    footer
+    
+  $ rake db:migrate
+  
+
+=============.
+initial deploy to heroku
+  $ heroku create
+  $ heroku rename relevant
+  $ git push heroku master
+  $ heroku rake db:migrate
+  $ heroku rake db:seed
+  $ heroku console
+    > require 'spec/support/blueprints.rb'
+    > require 'spec/support/relevant_factory.rb'
+    > relevant_reading_fixtures(true)
+    > exit
+    

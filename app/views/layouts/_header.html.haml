@@ -1,0 +1,23 @@
+%header
+  %nav
+    %ul
+      %li= link_to 'home', '/'
+      %li= link_to 'about', about_path
+      %li= link_to 'contact', contact_path
+      - if signed_in?
+        %li= current_user.email
+        %li= link_to 'my account', account_path
+        %li= link_to 'sign out', signout_path        
+      - else
+        %li= link_to 'sign up', signup_path
+        %li= link_to 'sign in', signin_path
+  - if admin?
+    %nav
+      %ul
+        %li ADMIN: 
+        %li= link_to 'users', users_path
+      
+#flashbar
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash_#{name}"
+

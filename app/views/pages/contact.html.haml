@@ -1,0 +1,12 @@
+- body_id 'contact_page'
+
+%h2
+  Contact Us
+  
+%div{ :style => 'text-align: center' }
+  %h4= APP_CONFIG[:company_name]
+  %p
+    [address]
+  %p
+    = mail_to APP_CONFIG[:contact_email], "email", :encode => "hex"
+  

@@ -1,0 +1,26 @@
+- title "Admin Users"
+
+%table{ :id => "users_table"}
+  %thead
+    %tr
+      %th Id
+      %th Email
+      %th Admin?
+      
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr{ :id => "user_#{user.id}", :class => "#{cycle('even', 'odd')}" }
+        %td= user.id
+        %td= user.email
+        %td 
+          = link_to (user.admin? ? 'ADMIN' : 'normal'), toggle_admin_user_path(user), :method => :put
+        %td
+          = link_to 'delete', user, :confirm => 'Are you sure?', :method => :delete 
+
+%p
+  = link_to "Add a user", new_user_path, :class => :button_link
+  %br
+  %br
+  = link_to "Done", root_path
+  

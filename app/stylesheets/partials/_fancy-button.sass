@@ -1,0 +1,14 @@
+@import fancy-buttons
+
+=custom-fancy-gradient($color1, $color2)
+  +radial-gradient(color_stops($color1, darken($color2, 5) 30px), "50% 10%")
+=invert-custom-fancy-gradient($color1, $color2)
+  +custom-fancy-gradient(lighten($color2, 10), lighten($color2, 25))
+
+.fancy-button-base
+  +fancy-button
+  margin: 0 2px
+  vertical-align: middle
+
+//$green: darken(#57b42c, 8)
+//$blue: adjust_hue($green, 110)
