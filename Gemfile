@@ -41,7 +41,8 @@ gem 'meta_where'
 gem 'rdiscount' #aka markdown
 
 group :development, :test, :cucumber do
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
+  #gem 'ruby-debug'
   gem 'nifty-generators'
 
   gem 'capybara'
