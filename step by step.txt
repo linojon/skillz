@@ -15,6 +15,11 @@ Fri Dec 17
     
   $ rake db:migrate
   
+  user scenarios from Starter3
+  
+  $ git init
+  $ git add .
+  $ git commit -m "first commit"
 
 =============.
 initial deploy to heroku
