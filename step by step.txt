@@ -21,16 +21,17 @@ Fri Dec 17
   $ git add .
   $ git commit -m "first commit"
 
-=============.
-initial deploy to heroku
-  $ heroku create
-  $ heroku rename relevant
-  $ git push heroku master
-  $ heroku rake db:migrate
-  $ heroku rake db:seed
-  $ heroku console
-    > require 'spec/support/blueprints.rb'
-    > require 'spec/support/relevant_factory.rb'
-    > relevant_reading_fixtures(true)
-    > exit
+  initial deploy to heroku
+    $ heroku create
+    $ git push heroku master
+
+    $ heroku stack:migrate bamboo-mri-1.9.2
+    $ git push heroku master
     
+    got errors on linecache19, comment out gem 'ruby-debug19' and re-push, and
+        $ gem install linecache19
+    
+    $ heroku rake db:migrate
+    $ heroku restart
+    $ rvm use 1.8.7
+    $ heroku stack:migrate bamboo-ree-1.8.7
