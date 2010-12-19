@@ -4,7 +4,7 @@ common: &common
   host: skillzillion.com
   admin_email: admin@parkerhill.com
   company_name: SkillZillion Corp.
-  contact_email: ksteinberg@cambridgerad.com
+  contact_email: skillzillion@gmail.com #ksteinberg@cambridgerad.com
   
 development:
   domain: localhost:3000
