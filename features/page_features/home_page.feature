@@ -5,7 +5,7 @@ Feature: Home page
   
   Scenario: Home page
     When I go to the home page
-    Then I should see "dude! what can you do?"
+    Then I should see "dude! what are you good at?"
 
   Scenario: Redirect to my dashboard when signed in
     Given I am signed in

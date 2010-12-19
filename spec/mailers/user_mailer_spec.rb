@@ -12,11 +12,11 @@ describe UserMailer do
     end
     
     it "should contain a signin link in the body" do
-      @mail.should have_body_text( /http:\/\/www.appname.com\/signin/ )
+      @mail.should have_body_text( /http:\/\/www.skillzillion.com\/signin/ )
     end
     
     it "should have Welcome subject" do
-      @mail.should have_subject(/Welcome to AppName/)
+      @mail.should have_subject(/Welcome to SkillZillion/)
     end
   end
 end

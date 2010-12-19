@@ -16,8 +16,10 @@ Feature: Contact form
     And I press "Send"
     Then I should be on the home page
     And I should see "Message sent! Thank you for contacting us." within the flashbar area
-    And "info@example.com" should receive an email with subject "SkillZillion contact form"
-    When "info@skillzillion.com" opens the email
+    # And "info@skillzillion.com" should receive an email with subject "SkillZillion contact form"
+    # When "info@skillzillion.com" opens the email
+    And "skillzillion@gmail.com" should receive an email with subject "SkillZillion contact form"
+    When "skillzillion@gmail.com" opens the email
     Then they should see /Hello, this is my message/ in the email body
     And they should see the email delivered from "Example <example@example.com>"
     
