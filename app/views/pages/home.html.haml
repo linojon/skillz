@@ -7,8 +7,8 @@
         Sign up
       = simple_form_for User.new do |f|
         = f.error_messages
-        = f.input :email, :required => false
-        = f.input :password, :required => false
+        = f.input :email, :required => false, :value => ''
+        = f.input :password, :required => false, :value => ''
         = f.input :password_confirmation, :required => false, :label => 'Confirm Password'
         = f.submit 'Create account', :class => 'button'
       %p
@@ -19,8 +19,8 @@
         Sign in
       = simple_form_for UserSession.new do |f|
         = f.error_messages
-        = f.input :email, :required => false
-        = f.input :password, :required => false
+        = f.input :email, :required => false, :value => ''
+        = f.input :password, :required => false, :value => ''
         = f.input :remember_me, :required => false, :label => 'Stay signed in', :as => :boolean
         = f.submit 'Sign in', :class => 'button'
       %p
