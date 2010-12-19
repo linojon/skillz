@@ -1,0 +1,6 @@
+- title "Contact Us"
+- simple_form_for @contact_form do |form|
+  = form.input :name
+  = form.input :email
+  = form.input :message, :as => :text
+  = form.button :submit, :value => 'Send'

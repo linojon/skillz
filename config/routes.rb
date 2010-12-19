@@ -16,7 +16,8 @@ Skillz::Application.routes.draw do
 
   match 'dashboard' => 'pages#dashboard', :as => :dashboard
   match 'about' => 'pages#about', :as => :about
-  match 'contact' => 'pages#contact', :as => :contact
+  #match 'contact' => 'pages#contact', :as => :contact
+  resources :contact_forms, :only => [:new, :create]
   root :to => "pages#home"
   
   # The priority is based upon order of creation:

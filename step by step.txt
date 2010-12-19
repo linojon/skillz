@@ -28,10 +28,12 @@ Fri Dec 17
     $ heroku stack:migrate bamboo-mri-1.9.2
     $ git push heroku master
     
-    got errors on linecache19, comment out gem 'ruby-debug19' and re-push, and
-        $ gem install linecache19
+    got errors on linecache19 because of 'ruby-debug19'
+    $ heroku config:add BUNDLE_WITHOUT="development:test:cucumber"
     
-    $ heroku rake db:migrate
+    $ heroku rake db:setup
     $ heroku restart
-    $ rvm use 1.8.7
-    $ heroku stack:migrate bamboo-ree-1.8.7
+
+  temporary url: http://blooming-frost-893.heroku.com/
+  
+  
