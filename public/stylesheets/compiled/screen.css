@@ -691,6 +691,31 @@ body.two-col #content {
   font-size: 1.5em;
 }
 
+/* line 52, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form label {
+  display: block;
+  margin: 2px 0;
+  text-align: left;
+}
+/* line 57, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form label.boolean {
+  display: inline;
+}
+/* line 60, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form input[type='email'], .stacked_form input[type='password'] {
+  width: 150px;
+}
+/* line 63, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form input[type='submit'] {
+  margin: 2px 0;
+  float: right;
+}
+/* line 67, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form p {
+  margin: 1em 0;
+  float: right;
+}
+
 /* line 2, ../../../app/stylesheets/partials/_utility.scss */
 th, td {
   text-align: center;
@@ -844,48 +869,5 @@ footer .copyright {
 /* line 83, ../../../app/stylesheets/screen.scss */
 #home_page #content {
   width: auto;
-}
-/* line 85, ../../../app/stylesheets/screen.scss */
-#home_page #content h2 {
   text-align: center;
-}
-/* line 89, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel {
-  float: right;
-  font-size: 80%;
-}
-/* line 94, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin, #home_page .signin_panel .signup {
-  float: left;
-  text-align: left;
-  margin: 0 1em;
-  padding: 1em;
-  width: 160px;
-  background-color: #eee;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 102, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin label, #home_page .signin_panel .signup label {
-  display: block;
-  margin: 2px 0;
-  text-align: left;
-}
-/* line 107, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin label.boolean, #home_page .signin_panel .signup label.boolean {
-  display: inline;
-}
-/* line 110, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin input[type='email'], #home_page .signin_panel .signin input[type='password'], #home_page .signin_panel .signup input[type='email'], #home_page .signin_panel .signup input[type='password'] {
-  width: 150px;
-}
-/* line 113, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin input[type='submit'], #home_page .signin_panel .signup input[type='submit'] {
-  margin: 2px 0;
-  float: right;
-}
-/* line 117, ../../../app/stylesheets/screen.scss */
-#home_page .signin_panel .signin p, #home_page .signin_panel .signup p {
-  margin: 1em 0;
-  float: right;
 }

@@ -1,46 +1,13 @@
 - body_id 'home_page'
 
-- unless signed_in?
-  .signin_panel
-    .signup
-      %h2
-        Sign up
-      = simple_form_for User.new do |f|
-        = f.error_messages
-        = f.input :email, :required => false, :input_html => { :value => '' }
-        = f.input :password, :required => false, :input_html => { :value => '' }
-        = f.input :password_confirmation, :required => false, :label => 'Confirm Password'
-        = f.submit 'Create account', :class => 'button'
-      %p
-        &nbsp;
-  
-    .signin
-      %h2
-        Sign in
-      = simple_form_for UserSession.new do |f|
-        = f.error_messages
-        = f.input :email, :required => false, :input_html => { :value => '' }
-        = f.input :password, :required => false, :input_html => { :value => '' }
-        = f.input :remember_me, :required => false, :label => 'Stay signed in', :as => :boolean
-        = f.submit 'Sign in', :class => 'button'
-      %p
-        = link_to "Can't access your account?", new_password_reset_path
-      - content_for :javascript_ready do
-        $('#user_email').attr("value", "");
-        $('#user_password').attr("value", "");
-
 %h2
-  maintain your real edge
-  %br
-  as a human skill-based asset
-  %br 
-  to the modern global workforce
-  %br
-  %br
-  huh? I mean, 
-  %br
-  %br  
-  dude! what are you <em>good</em> at? :)
-  
-  
-  
+  Plant your flag!
+%h2
+  Define your skills!
+#input_box
+  = form_tag new_user_path, :method => :get do
+    %p
+      = label_tag :zipcode, 'Your zipcode:'
+      = text_field_tag :zipcode, nil, :style => 'width:75px'
+    %p
+      = submit_tag 'Skill me!', :class => 'button'

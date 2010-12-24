@@ -39,6 +39,7 @@ gem 'simple_form'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'meta_where'
 gem 'rdiscount' #aka markdown
+gem 'geokit'
 
 group :development, :test, :cucumber do
   gem 'ruby-debug19'

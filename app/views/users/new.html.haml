@@ -2,4 +2,10 @@
 
 %p== Already have an account? #{link_to "Sign in", signin_path}.
 
-= render 'form'
+%signup
+  = simple_form_for @user do |f|
+    = f.error_messages
+    = f.input :zipcode, :input_html => {:style => 'width:75px'}
+    = f.input :email, :label => "Email Address", :input_html => {:style => 'width:150px'}
+    = f.submit 'Begin'
+

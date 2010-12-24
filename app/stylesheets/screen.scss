@@ -82,42 +82,6 @@ footer {
 #home_page {
   #content {
     width: auto;
-    h2 {
-      text-align: center;
-    }
-  }
-  .signin_panel {
-    float: right;
-    font-size: 80%; 
-    //width: 250px;
-    
-    .signin, .signup {
-      float: left;
-      text-align: left;
-      margin: 0 1em;
-      padding: 1em;
-      width: 160px;
-      background-color: #eee;
-      @include clearfix;
-      label {
-        display:block;
-        margin: 2px 0;
-        text-align: left;
-      }
-      label.boolean {
-        display: inline;
-      }
-      input[type='email'],input[type='password'] { 
-        width: 150px;
-      }
-      input[type='submit'] {
-        margin: 2px 0;
-        float: right;
-      }
-      p {
-        margin: 1em 0;
-        float: right;
-      }
-    }
+    text-align: center;
   }
 }

@@ -36,4 +36,39 @@ Fri Dec 17
 
   temporary url: http://blooming-frost-893.heroku.com/
   
+Mon Dec 20
+  meeting in Manchester
+  
+-----------------------------
+Thur Dec 23
+  research mapping api
+  research hosting vps
+  
+
+  authlogic gradual engagement
+    see https://gist.github.com/459563
+  
+  Gemfile  
+    gem 'geokit'
+    
+    
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+google.maps.event.addListener(map, 'zoom_changed', function() { 
+				  if (map.getZoom() > 16) { 
+				    map.setZoom(16); 
+				  } 
+				}); 
+
+			
+            }
+  
+
+-----------------------------
   

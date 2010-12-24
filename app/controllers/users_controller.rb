@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = User.new(:zipcode => params[:zipcode])
   end
 
   def create

@@ -47,3 +47,29 @@
     font-size: 1.5em;
   }
 }
+
+.stacked_form {
+  label {
+    display:block;
+    margin: 2px 0;
+    text-align: left;
+  }
+  label.boolean {
+    display: inline;
+  }
+  input[type='email'],input[type='password'] { 
+    width: 150px;
+  }
+  input[type='submit'] {
+    margin: 2px 0;
+    float: right;
+  }
+  p {
+    margin: 1em 0;
+    float: right;
+  }
+}
+
+.columnar_form {
+  
+}
