@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20101224051104) do
     t.string   "zipcode"
     t.integer  "metrocode"
     t.float    "lat"
-    t.float    "long"
+    t.float    "lng"
   end
 
 end

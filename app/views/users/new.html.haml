@@ -1,11 +1,12 @@
-- title "Sign up"
+- title "Sign up", show_title=false
 
-%p== Already have an account? #{link_to "Sign in", signin_path}.
 
-%signup
+#user_action
   = simple_form_for @user do |f|
     = f.error_messages
-    = f.input :zipcode, :input_html => {:style => 'width:75px'}
-    = f.input :email, :label => "Email Address", :input_html => {:style => 'width:150px'}
+    = f.input :zipcode, :label => 'Your zipcode', :input_html => {:style => 'width:75px'}
+    = f.input :email, :label => "Your email address", :input_html => {:style => 'width:150px'}
     = f.submit 'Begin'
+  %p{:style => 'margin-top:2em'} Already have an account? #{link_to "Sign in", signin_path}.
 
+= render :partial => 'shared/google_map', :locals => { :user => @user }

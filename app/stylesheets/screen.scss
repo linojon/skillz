@@ -68,6 +68,11 @@
   }
 }
 
+#user_action {
+  // primary user action box
+  float: right;
+}
+
 footer {
   clear: both;
   background: #ddd;
@@ -83,5 +88,8 @@ footer {
   #content {
     width: auto;
     text-align: center;
+  }
+  #user_action {
+    float:none;
   }
 }

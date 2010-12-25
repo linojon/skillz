@@ -32,12 +32,16 @@ describe User do
     user.save.should be_true
   end
   
-  it "should convert zipcode to lat/long when validating zipcode" do
+  it "should act as mappable" do
+    User.should respond_to( :find_within)
+  end
+  
+  it "should convert zipcode to lat,lng when validating zipcode" do
     MultiGeocoder.should_receive(:geocode).with('03585').and_return(@geo)
     user = User.new( :email => 'example@example.com', :zipcode => '03585')
     user.should be_valid
     user.lat.should == @geo.lat
-    user.long.should == @geo.lng
+    user.lng.should == @geo.lng
   end
   
   it "should validate zipcode format" do

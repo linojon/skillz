@@ -855,19 +855,28 @@ th, td {
 }
 
 /* line 71, ../../../app/stylesheets/screen.scss */
+#user_action {
+  float: right;
+}
+
+/* line 76, ../../../app/stylesheets/screen.scss */
 footer {
   clear: both;
   background: #ddd;
   color: #888;
   padding: 3px 1em;
 }
-/* line 76, ../../../app/stylesheets/screen.scss */
+/* line 81, ../../../app/stylesheets/screen.scss */
 footer .copyright {
   text-align: right;
 }
 
-/* line 83, ../../../app/stylesheets/screen.scss */
+/* line 88, ../../../app/stylesheets/screen.scss */
 #home_page #content {
   width: auto;
   text-align: center;
+}
+/* line 92, ../../../app/stylesheets/screen.scss */
+#home_page #user_action {
+  float: none;
 }

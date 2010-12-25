@@ -46,10 +46,23 @@ Thur Dec 23
   
 
   authlogic gradual engagement
-    see https://gist.github.com/459563
+    [not using https://gist.github.com/459563 ]
+    
+    
   
   Gemfile  
     gem 'geokit'
+  $ gem install geokit
+  $ bundle install
+  $ rails c
+  > 
+  
+Fri Dec 24
+  $ rails plugin install git://github.com/andre/geokit-rails.git
+  
+  acts_as_mappable
+    DOES NOT WORK WITH Sqlite
+    
     
     
 -----------------------------

@@ -1,0 +1,7 @@
+#map
+  #map_canvas{:style => 'width: 400px; height:300px'}
+  - google_map_render( :lat => @user.lat, :lng => @user.lng, :map_type => 'skillz', :pan_zoom => false )
+  - google_map_marker( :lat => @user.lat, :lng => @user.lng )
+  - google_map_delay_load
+  %p{:style => 'font-size:small; color:#aaa'} We respect your privacy, so locations are approximate within your zipcode
+    
