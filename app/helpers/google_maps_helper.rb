@@ -14,7 +14,12 @@ module GoogleMapsHelper
   #
   # TODO:
   #   :max_zoom => 8
-  def google_map_render( options )
+  def google_map_render( options={} )
+    unless options[:lat] && options[:lng]
+      # full US map
+      options[:lat], options[:lng] = us_center
+      options[:zoom] = 2
+    end
     map_options = {
       :zoom      => options[:zoom] || 8,
       :center    => "%new google.maps.LatLng(#{options[:lat]}, #{options[:lng]})%",
@@ -27,6 +32,7 @@ module GoogleMapsHelper
         :draggable              => false
       )
     end
+
     
     canvas = options[:map_canvas] || 'map_canvas'
     
@@ -73,7 +79,11 @@ module GoogleMapsHelper
   #   :animation =>  'bounce' #versus 'drop'
   #   :title     => 'You'
   #   :icon      => 'flag1.png'
-  def google_map_marker( options )
+  def google_map_marker( options={} )
+    unless options[:lat] && options[:lng]
+      # full US map
+      options[:lat], options[:lng] = us_center
+    end
     marker_options = {
       :map      => "%google_map%",
       :position => "%new google.maps.LatLng(#{options[:lat]}, #{options[:lng]})%",
@@ -114,6 +124,12 @@ module GoogleMapsHelper
     end
     
     nil
+  end
+  
+  private
+  
+  def us_center
+    [37.09024, -95.712891]
   end
 
 end

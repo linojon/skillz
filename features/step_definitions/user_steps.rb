@@ -1,8 +1,8 @@
 module UserHelpers
-  def create_user(email = nil)
-    email ||= 'jonathan@example.com'
+  def create_user(email = nil, zipcode='03585')
+    email ||= 'example@example.com'
     #@current_user ||= User.make( :username => username )
-    @current_user ||= User.create(:email => "#{email}", :password => 'secret', :password_confirmation => 'secret')
+    @current_user ||= User.create(:email => email, :zipcode => zipcode, :password => 'secret', :password_confirmation => 'secret')
   end
   
   def create_admin

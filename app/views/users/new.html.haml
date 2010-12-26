@@ -3,7 +3,6 @@
 
 #user_action
   = simple_form_for @user do |f|
-    = f.error_messages
     = f.input :zipcode, :label => 'Your zipcode', :input_html => {:style => 'width:75px'}
     = f.input :email, :label => "Your email address", :input_html => {:style => 'width:150px'}
     = f.submit 'Begin'

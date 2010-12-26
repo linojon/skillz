@@ -6,7 +6,7 @@ Feature: Define my skills
   Background:
     Given I am on the home page
     When I fill in "zipcode" with "02210"
-    And I press "Skill Me!"
+    And I press "Skill me!"
     And I fill in "email" with "example@example.com"
     And press "Begin"
     Then I should be on the Enter Skills pages

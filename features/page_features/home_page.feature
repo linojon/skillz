@@ -6,7 +6,8 @@ Feature: Home page
   Scenario: Home page
     When I go to the home page
     Then I should see "Plant your flag"
-    And I should see "Define your skills"
+    And I should see "Claim your skills"
+    And I should see "Enter your zipcode"
 
   Scenario: Redirect to my dashboard when signed in
     Given I am signed in

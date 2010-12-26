@@ -4,7 +4,7 @@ describe UsersController do
   render_views
   
   before :each do
-    @user = mock_model(User, :email => 'foo@example.com', :password => nil, :password_confirmation => nil)
+    @user = User.make 
     User.stub(:new).and_return(@user)
     @mailer = mock(UserMailer)
     @mailer.stub(:deliver)

@@ -669,13 +669,14 @@ body.two-col #content {
 }
 /* line 27, ../../../app/stylesheets/partials/_simple_form.scss */
 .simple_form .error {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
+  margin: 0 0 0 120px;
+  padding: 0;
+  border: none;
+  background: none;
   color: #D00;
   display: block;
 }
-/* line 35, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 43, ../../../app/stylesheets/partials/_simple_form.scss */
 .simple_form .hint {
   clear: left;
   margin-left: 120px;
@@ -684,36 +685,45 @@ body.two-col #content {
   display: block;
   font-style: italic;
 }
-/* line 44, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 52, ../../../app/stylesheets/partials/_simple_form.scss */
 .simple_form legend {
   padding-left: 120px;
   font-weight: bold;
   font-size: 1.5em;
 }
 
-/* line 52, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 61, ../../../app/stylesheets/partials/_simple_form.scss */
 .stacked_form label {
   display: block;
   margin: 2px 0;
   text-align: left;
 }
-/* line 57, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 66, ../../../app/stylesheets/partials/_simple_form.scss */
 .stacked_form label.boolean {
   display: inline;
 }
-/* line 60, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 69, ../../../app/stylesheets/partials/_simple_form.scss */
 .stacked_form input[type='email'], .stacked_form input[type='password'] {
   width: 150px;
 }
-/* line 63, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 72, ../../../app/stylesheets/partials/_simple_form.scss */
 .stacked_form input[type='submit'] {
   margin: 2px 0;
   float: right;
 }
-/* line 67, ../../../app/stylesheets/partials/_simple_form.scss */
+/* line 76, ../../../app/stylesheets/partials/_simple_form.scss */
 .stacked_form p {
   margin: 1em 0;
   float: right;
+}
+/* line 80, ../../../app/stylesheets/partials/_simple_form.scss */
+.stacked_form .error {
+  margin: 0 0 0 120px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #D00;
+  display: block;
 }
 
 /* line 2, ../../../app/stylesheets/partials/_utility.scss */
@@ -800,11 +810,12 @@ th, td {
 
 /* line 52, ../../../app/stylesheets/screen.scss */
 #flashbar {
-  margin: 1em;
-  font-size: 150%;
+  width: 50%;
+  margin: 1em auto;
+  font-weight: bold;
   text-align: center;
 }
-/* line 56, ../../../app/stylesheets/screen.scss */
+/* line 59, ../../../app/stylesheets/screen.scss */
 #flashbar #flash_error, #flashbar #flash_alert {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -817,7 +828,7 @@ th, td {
 #flashbar #flash_error a, #flashbar #flash_alert a {
   color: #8a1f11;
 }
-/* line 59, ../../../app/stylesheets/screen.scss */
+/* line 62, ../../../app/stylesheets/screen.scss */
 #flashbar #flash_notice {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -830,7 +841,7 @@ th, td {
 #flashbar #flash_notice a {
   color: #514721;
 }
-/* line 62, ../../../app/stylesheets/screen.scss */
+/* line 65, ../../../app/stylesheets/screen.scss */
 #flashbar #flash_success {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -843,7 +854,7 @@ th, td {
 #flashbar #flash_success a {
   color: #264409;
 }
-/* line 65, ../../../app/stylesheets/screen.scss */
+/* line 68, ../../../app/stylesheets/screen.scss */
 #flashbar #flash_error, #flashbar #flash_alert, #flashbar #flash_notice, #flashbar #flash_success {
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
@@ -854,29 +865,39 @@ th, td {
   padding: 0;
 }
 
-/* line 71, ../../../app/stylesheets/screen.scss */
+/* line 74, ../../../app/stylesheets/screen.scss */
 #user_action {
   float: right;
 }
 
-/* line 76, ../../../app/stylesheets/screen.scss */
+/* line 79, ../../../app/stylesheets/screen.scss */
+.error_messages {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+}
+
+/* line 88, ../../../app/stylesheets/screen.scss */
 footer {
   clear: both;
   background: #ddd;
   color: #888;
   padding: 3px 1em;
 }
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 93, ../../../app/stylesheets/screen.scss */
 footer .copyright {
   text-align: right;
 }
 
-/* line 88, ../../../app/stylesheets/screen.scss */
+/* line 100, ../../../app/stylesheets/screen.scss */
 #home_page #content {
   width: auto;
   text-align: center;
 }
-/* line 92, ../../../app/stylesheets/screen.scss */
+/* line 104, ../../../app/stylesheets/screen.scss */
 #home_page #user_action {
   float: none;
 }

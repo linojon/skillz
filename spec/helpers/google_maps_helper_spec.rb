@@ -31,6 +31,12 @@ describe GoogleMapsHelper do
       google_map_scripts.should include('"center":new google.maps.LatLng(100.1, 200.2)')
     end
     
+    it "should default to full US map and zoom if lat or lng are nil" do
+      @html = helper.google_map_render
+      google_map_scripts.should include('"center":new google.maps.LatLng(37.09024, -95.712891)')
+      google_map_scripts.should include('"zoom":2')
+    end
+    
     it "should default to roadmap type" do
       google_map_scripts.should include('"mapTypeId":google.maps.MapTypeId.ROADMAP')
     end
@@ -62,6 +68,12 @@ describe GoogleMapsHelper do
     it "should set the position lat and lng" do
       google_map_scripts.should include('"position":new google.maps.LatLng(100.1, 200.2)')
     end
+    
+    it "should default to center of US if lat or lng are nil" do
+      helper.google_map_marker
+      google_map_scripts.should include('"position":new google.maps.LatLng(37.09024, -95.712891)')
+    end
+    
 
     it "should default to flag1.png icon" do
       google_map_scripts.should include('"icon":"/images/flag1.png"')

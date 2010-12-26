@@ -8,23 +8,35 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(:zipcode => params[:zipcode])
-    @user.geocode_the_zipcode
+    if params[:zipcode].present?
+      @user = User.new(:zipcode => params[:zipcode])
+      #@user.geocode_the_zipcode
+      @user.valid?
+      @user.errors.delete(:email) unless @user.errors[:zipcode].blank? #(hack to get just zipcode error message to show)
+    else
+      @user = User.new
+    end
+    render :action => 'admin_new' if admin?
   end
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      if admin?
-        flash[:notice] = "User successfully added"
-        redirect_to users_path
+    if admin?
+      if @user.save
+          flash[:notice] = "User successfully added"
+          redirect_to users_path
       else
+        render :action => 'admin_new'
+      end
+    else
+      if @user.save
         UserMailer.welcome_email(@user).deliver
         flash[:notice] = "Thank you for signing up! You are now signed in."
         redirect_to_target_or_default dashboard_url
+      else
+        @user = User.new if @user.zipcode.blank? #just reset all the fields, no errors
+        render :action => 'new'
       end
-    else
-      render :action => 'new'
     end
   end
   

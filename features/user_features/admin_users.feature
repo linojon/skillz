@@ -29,7 +29,8 @@ Feature: Admin users
     When I go to the users page
     And follow "Add a user"
     Then I should be on the new user page
-    When I fill in "Email" with "newuser@example.com"
+    When I fill in "Email address" with "newuser@example.com"
+    And fill in "Zipcode" with "03585"
     And fill in "Password" with "secret"
     And fill in "Confirm Password" with "secret"
     And press "Sign up"

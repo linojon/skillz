@@ -63,7 +63,8 @@ Fri Dec 24
   acts_as_mappable
     DOES NOT WORK WITH Sqlite
     
-    
+  google_maps_helper and spec
+  
     
 -----------------------------
 -----------------------------
@@ -82,6 +83,9 @@ google.maps.event.addListener(map, 'zoom_changed', function() {
 			
             }
   
+.
+= f.error_messages, :header_message => "Invalid product!",
+    :message => "You'll need to fix the following fields:",
 
 -----------------------------
   

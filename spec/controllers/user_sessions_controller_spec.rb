@@ -4,7 +4,7 @@ describe UserSessionsController do
   render_views
   
   before :each do
-    @user = User.create( :email => 'foo@example.com', :password => 'secret', :password_confirmation => 'secret')
+    @user = User.make(:foo) 
   end
   
   it "new action should render new template" do
