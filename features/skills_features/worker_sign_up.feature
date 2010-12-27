@@ -23,23 +23,25 @@ Feature: Worker sign up
     And I press "Skill me!"
     Then I should be on the Signup page
     And I should see "is an invalid zip code"
-    And I should not see "can't be blank" #for the "user email" field
+    And I should not see "can't be blank" 
+      #for the "user email" field
 
   Scenario: Enter blank email address
-    Given I am on the home page
-    When I fill in "zipcode" with "02210"
-    And I press "Skill me!"
-    Then I should be on the Signup page
-    And I should see "can't be blank" #for the "user email" field
+    Given I am on the Sign Up page for zipcode "02210"
+    And I press "Begin"
+    #Then I should be on the Signup page
+    Then I should see "can't be blank" 
+      #for the "user email" field
     
   Scenario: Sign up
-    Given I am on the Sign Up page for zipcode "02210
+    Given I am on the Sign Up page for zipcode "02210"
     When I fill in "email" with "example@example.com"
     And press "Begin"
-    Then I should be on the Enter Skills pages
+    Then I should be on the Skills page
     And there should be an unregistered user "example@example.com"
     And there should be a session 
     And the user should be "example@example.com"
+    And "example@example.com" should receive an email with subject "Welcome to SkillZillion"
     
-  
+    
   

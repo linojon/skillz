@@ -1,5 +1,7 @@
 Skillz::Application.routes.draw do
   
+  resources :skills
+  
   match 'user/edit' => 'users#edit', :as => :edit_user
   match 'signup' => 'users#new', :as => :signup
   match 'signout' => 'user_sessions#destroy', :as => :signout

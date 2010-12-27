@@ -880,24 +880,29 @@ th, td {
   border-color: #fbc2c4;
 }
 
-/* line 88, ../../../app/stylesheets/screen.scss */
+/* line 89, ../../../app/stylesheets/screen.scss */
 footer {
   clear: both;
   background: #ddd;
   color: #888;
   padding: 3px 1em;
 }
-/* line 93, ../../../app/stylesheets/screen.scss */
+/* line 94, ../../../app/stylesheets/screen.scss */
 footer .copyright {
   text-align: right;
 }
 
-/* line 100, ../../../app/stylesheets/screen.scss */
+/* line 101, ../../../app/stylesheets/screen.scss */
 #home_page #content {
   width: auto;
   text-align: center;
 }
-/* line 104, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 #home_page #user_action {
   float: none;
+}
+
+/* line 112, ../../../app/stylesheets/screen.scss */
+form#new_user label {
+  width: 130px;
 }

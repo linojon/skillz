@@ -11,9 +11,8 @@ module GoogleMapsHelper
   #   :zooom    => 8,
   #   :canvas   => 'map_canvas'
   #   :map_type => nil for google ROADMAP #or 'skillz'
+  #   :max_zoom => 12  #set to '' to disable
   #
-  # TODO:
-  #   :max_zoom => 8
   def google_map_render( options={} )
     unless options[:lat] && options[:lng]
       # full US map
@@ -21,17 +20,22 @@ module GoogleMapsHelper
       options[:zoom] = 2
     end
     map_options = {
-      :zoom      => options[:zoom] || 8,
-      :center    => "%new google.maps.LatLng(#{options[:lat]}, #{options[:lng]})%",
-      :mapTypeId => options[:map_type] || "%google.maps.MapTypeId.ROADMAP%",
+      :zoom              => options[:zoom] || 8,
+      :center            => "%new google.maps.LatLng(#{options[:lat]}, #{options[:lng]})%",
+      :mapTypeId         => options[:map_type] || "%google.maps.MapTypeId.ROADMAP%",
+      :disableDefaultUI  => true,
+      :mapTypeControl    => false,       # eg street, satellite, etc
+      :navigationControl => true,        # zoom buttons
+      :scaleControl      => false,       #this is a view only shows feet per inch
     };
     if options[:pan_zoom]==false
       map_options.merge!(
-        :disableDefaultUI       => true,
         :disableDoubleClickZoom => true,
-        :draggable              => false
+        :draggable              => false,
+        :navigationControl      => false,
       )
     end
+    max_zoom = options[:max_zoom] || 12
 
     
     canvas = options[:map_canvas] || 'map_canvas'
@@ -44,6 +48,15 @@ module GoogleMapsHelper
     
     # set custom type
     google_map_type(options[:map_type])
+    
+    # max zoom
+    if !max_zoom.blank?
+      @google_map_scripts << %Q^
+      google.maps.event.addListener(google_map, 'zoom_changed', function(){ 
+        if (google_map.getZoom() > #{max_zoom}) { google_map.setZoom(#{max_zoom}); } 
+      }); 
+      ^
+    end
     
     nil
   end

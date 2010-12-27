@@ -27,6 +27,23 @@ describe GoogleMapsHelper do
       google_map_scripts.should include('"zoom":16')      
     end
     
+    it "should default max zoom level to 12" do
+      # inside zoom_changed listener:
+      google_map_scripts.should include('if (google_map.getZoom() > 12) { google_map.setZoom(12);')      
+    end
+    
+    it "should set max zoom level" do
+      @html = helper.google_map_render(@options.merge(:max_zoom => 8))
+      # inside zoom_changed listener:
+      google_map_scripts.should include('if (google_map.getZoom() > 8) { google_map.setZoom(8);')      
+    end
+    
+    it "should disable max zoom level" do
+      @html = helper.google_map_render(@options.merge(:max_zoom => ''))
+      # inside zoom_changed listener:
+      google_map_scripts.should_not include('if (google_map.getZoom()')      
+    end
+    
     it "should set the center lat and lng" do
       google_map_scripts.should include('"center":new google.maps.LatLng(100.1, 200.2)')
     end
@@ -52,7 +69,9 @@ describe GoogleMapsHelper do
     
     it "should set disable pan and zoom controls" do
       @html = helper.google_map_render(@options.merge(:pan_zoom => false))
-      google_map_scripts.should include('"disableDefaultUI":true,"disableDoubleClickZoom":true,"draggable":false')      
+      google_map_scripts.should include('"navigationControl":false')
+      google_map_scripts.should include('"disableDoubleClickZoom":true')
+      google_map_scripts.should include('"draggable":false')      
     end
     
   end

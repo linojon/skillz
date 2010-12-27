@@ -44,7 +44,7 @@ Given /^there is a user "(.*)"$/ do |email|
   create_user email
 end
 
-Given /^I am signed in(?: as "([^"]*)")?$/ do |email|
+Given /^I am signed in(?: as "([^"]*)")?$/ do |email| #"
   create_user email
   signin_user
 end
@@ -63,7 +63,7 @@ Given /^there are users registered$/ do
   User.make(:bar)
 end
 
-When /^I sign in(?: as "([^"]*)")?$/ do |email|
+When /^I sign in(?: as "([^"]*)")?$/ do |email| #"
   signin_user email
 end
 
@@ -84,6 +84,12 @@ end
 Then /^the user should be "([^"]*)"$/ do |email| #"
   user_session
   @session.user.email.should be == email
+end
+
+Then /^there should be an unregistered user "([^"]*)"$/ do |email| #"
+  user = User.find_by_email(email)
+  user.should_not be_nil
+  user.crypted_password.should be_nil
 end
 
 # user profile steps

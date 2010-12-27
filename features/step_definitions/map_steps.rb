@@ -1,6 +1,6 @@
 
 
-Then /^I should see a Google map centered on "([^"]*)" with a bouncing marker$/ do |location|
+Then /^I should see a Google map centered on "([^"]*)" with a bouncing marker$/ do |location| #"
   # spot check for the javascript we expect
   js = %Q^new google.maps.Map^
   page.should have_content(js)

@@ -77,6 +77,7 @@
 }
 
 .error_messages {
+  // style the form error messages like default blueprint flashbar error
   padding: 0.8em;
   margin-bottom: 1em;
   border: 2px solid #dddddd;
@@ -103,5 +104,12 @@ footer {
   }
   #user_action {
     float:none;
+  }
+}
+
+//------------------------
+form#new_user {
+  label {
+    width: 130px;
   }
 }

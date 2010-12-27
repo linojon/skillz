@@ -11,5 +11,6 @@ class PagesController < ApplicationController
       flash.keep
       redirect_to root_path
     end
+    redirect_to skills_path #for now
   end
 end

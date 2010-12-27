@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @user = User.new(:zipcode => params[:zipcode])
       #@user.geocode_the_zipcode
       @user.valid?
-      @user.errors.delete(:email) unless @user.errors[:zipcode].blank? #(hack to get just zipcode error message to show)
+      @user.errors.delete(:email) #(just zipcode error message shows when entering the #new page)
     else
       @user = User.new
     end
@@ -31,8 +31,10 @@ class UsersController < ApplicationController
     else
       if @user.save
         UserMailer.welcome_email(@user).deliver
-        flash[:notice] = "Thank you for signing up! You are now signed in."
-        redirect_to_target_or_default dashboard_url
+        # flash[:notice] = "Thank you for signing up! You are now signed in."
+        # redirect_to_target_or_default dashboard_url
+        flash[:notice] = "Welcome #{@user.email} to SkillZillion"
+        redirect_to  skills_path
       else
         @user = User.new if @user.zipcode.blank? #just reset all the fields, no errors
         render :action => 'new'
