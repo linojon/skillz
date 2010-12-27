@@ -45,4 +45,22 @@ The authentication process should allow users to signin and signout and should p
     And there should not be a session
     And I should see "Email or password was entered incorrectly" within the flashbar area
       
+  Scenario: Unregistered user signs in
+    Given there is an unregistered user "example@example.com"
+    And I am on the signin page
+    When I fill in "Email" with "example@example.com"
+    And I press "Sign in"
+    #And show me the page
+    Then I should see "Hello, example@example.com"
+    And I should see "Zip code: 03585"
+    And I should see "This is your first time logging in"
+    And I should see "Please choose a password"
+    When I fill in "Password" with "secret"
+    And fill in "Confirm Password" with "secret"
+    And press "Set password"
+    Then there should be a session
+    And the user should be "example@example.com"
+    And the user should be registered
+    
+    
     

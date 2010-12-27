@@ -38,9 +38,9 @@ Feature: Worker sign up
     When I fill in "email" with "example@example.com"
     And press "Begin"
     Then I should be on the Skills page
-    And there should be an unregistered user "example@example.com"
     And there should be a session 
     And the user should be "example@example.com"
+    And the user should not be registered
     And "example@example.com" should receive an email with subject "Welcome to SkillZillion"
     
     

@@ -27,6 +27,7 @@ describe UsersController do
     #User.any_instance.stubs(:valid?).returns(true)
     @user.should_receive(:save).and_return(true)
     post :create
-    response.should redirect_to("/dashboard")
+    # response.should redirect_to("/dashboard")
+    response.should redirect_to("/skills")
   end
 end

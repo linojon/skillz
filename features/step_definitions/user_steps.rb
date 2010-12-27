@@ -5,6 +5,11 @@ module UserHelpers
     @current_user ||= User.create(:email => email, :zipcode => zipcode, :password => 'secret', :password_confirmation => 'secret')
   end
   
+  def create_unregistered_user(email = nil, zipcode='03585')
+    email ||= 'example@example.com'
+    @current_user ||= User.create(:email => email, :zipcode => zipcode)
+  end
+  
   def create_admin
     create_user( 'admin@example.com')
     @current_user.admin = true
@@ -42,6 +47,10 @@ end
 
 Given /^there is a user "(.*)"$/ do |email|
   create_user email
+end
+
+Given /^there is an unregistered user "(.*)"$/ do |email|
+  create_unregistered_user email
 end
 
 Given /^I am signed in(?: as "([^"]*)")?$/ do |email| #"
@@ -86,10 +95,14 @@ Then /^the user should be "([^"]*)"$/ do |email| #"
   @session.user.email.should be == email
 end
 
-Then /^there should be an unregistered user "([^"]*)"$/ do |email| #"
-  user = User.find_by_email(email)
-  user.should_not be_nil
-  user.crypted_password.should be_nil
+Then /^the user should not be registered$/ do
+  user_session
+  @session.user.should_not be_registered
+end
+
+Then /^the user should be registered$/ do
+  user_session
+  @session.user.should be_registered
 end
 
 # user profile steps

@@ -8,7 +8,11 @@ Skillz::Application.routes.draw do
   match 'signin' => 'user_sessions#new', :as => :signin
   
   resource :account, :controller => 'users'
-  resources :user_sessions
+  resources :user_sessions do
+    collection do
+      put 'password'
+    end
+  end
   resources :users do
     member do
       put 'toggle_admin'

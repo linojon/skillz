@@ -32,6 +32,18 @@ describe User do
     user.save.should be_true
   end
   
+  it "should not be registered when no password defined" do
+    user = User.new( :email => 'example@example.com', :zipcode => '03585')
+    user.save
+    user.registered?.should_not be_true
+  end
+  
+  it "should be registered when password defined" do
+    user = User.new( :email => 'example@example.com', :zipcode => '03585',:password => 'secret', :password_confirmation => 'secret')
+    user.save
+    user.registered?.should be_true
+  end
+    
   it "should act as mappable" do
     User.should respond_to( :find_within)
   end
@@ -56,6 +68,7 @@ describe User do
     user.should_not be_valid
     user.errors[:zipcode].should include('is not a valid US zip code')
   end
+  
     
 end
 

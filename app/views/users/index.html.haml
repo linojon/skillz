@@ -5,8 +5,8 @@
     %tr
       %th Id
       %th Email
-      %th Admin?
-      
+      %th Status
+
       %th
   %tbody
     - @users.each do |user|
@@ -14,7 +14,15 @@
         %td= user.id
         %td= user.email
         %td 
-          = link_to (user.admin? ? 'ADMIN' : 'normal'), toggle_admin_user_path(user), :method => :put
+          - if !user.registered?
+            Not registered
+            = link_to '(send pswd reset)', password_resets_path(:email => user.email)
+          - elsif user.admin?
+            ADMIN
+            = link_to '(make normal)', toggle_admin_user_path(user), :method => :put
+          - else
+            normal
+            = link_to '(make admin)', toggle_admin_user_path(user), :method => :put
         %td
           = link_to 'delete', user, :confirm => 'Are you sure?', :method => :delete 
 

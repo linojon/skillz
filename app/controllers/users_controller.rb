@@ -78,4 +78,5 @@ class UsersController < ApplicationController
     flash[:notice] = user.admin? ? "USER IS AN ADMIN" : "User is not an admin"
     redirect_to users_path
   end
+  
 end

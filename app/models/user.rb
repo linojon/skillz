@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
       errors.add(:zipcode, 'is not a valid US zip code')
     end
   end
+  
+  def registered?
+    crypted_password.present?
+  end
 end

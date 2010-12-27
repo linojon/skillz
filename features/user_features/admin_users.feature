@@ -49,19 +49,18 @@ Feature: Admin users
   Scenario: Make user admin
     Given I am signed in as an admin
     When I go to the users page
-    And I follow "normal" on the row containing "foo@example.com"
+    And I follow "(make admin)" on the row containing "foo@example.com"
     Then I should see "USER IS AN ADMIN"
     And I should see "ADMIN" on the row containing "foo@example.com"
   
   Scenario: Un-admin a user
     Given I am signed in as an admin
     When I go to the users page
-    And I follow "normal" on the row containing "foo@example.com"
-    Then I should see "USER IS AN ADMIN"
-    When I sign out
+    And I follow "(make admin)" on the row containing "foo@example.com"
+    And I sign out
     And I sign in as "foo@example.com"
     And I go to the users page
-    When I follow "ADMIN" on the row containing "admin@example.com"
+    And I follow "(make normal)" on the row containing "admin@example.com"
     Then I should see "normal" on the row containing "admin@example.com"
     
     

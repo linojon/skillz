@@ -65,7 +65,12 @@ Fri Dec 24
     
   google_maps_helper and spec
   
-    
+Sun Dec 26
+  worker_sign_up.feature
+  restricted map pan/zoom
+  user.registered?
+  2 step registration process
+  
 -----------------------------
 -----------------------------
 -----------------------------
