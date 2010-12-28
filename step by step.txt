@@ -112,6 +112,22 @@ Sun Dec 26
   $ cap deploy:setup
   $ cap deploy:cold
   
+  # cd apps/skillz/current
+  => RVM has encountered a not yet trusted .rvmrc file in the...
+  # rvm install ruby-1.9.2-p136
+  # ruby -v
+  ruby 1.9.2p136 (2010-12-25 revision 30363) [i686-linux]
+  
+  # gem install bundler
+  # gem install rails
+  # bundle install
+  => errors
+  $ cap deploy
+  # bundle install
+  # rake RAILS_ENV=production rb:migrate
+  => !!! Missing the mysql2 gem. Add it to your Gemfile: gem 'mysql2'
+  
+   
   
 ---
 server
