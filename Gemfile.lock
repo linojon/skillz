@@ -110,6 +110,7 @@ GEM
       activesupport (~> 3.0.2)
       arel (~> 2.0.2)
     mime-types (1.16)
+    mysql2 (0.2.6)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -202,6 +203,7 @@ DEPENDENCIES
   launchy
   machinist (= 1.0.6)
   meta_where
+  mysql2
   nifty-generators
   rails (= 3.0.3)
   rdiscount
