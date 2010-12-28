@@ -16,7 +16,7 @@
         %td 
           - if !user.registered?
             Not registered
-            = link_to '(send pswd reset)', password_resets_path(:email => user.email)
+            = link_to '(send pswd reset)', password_resets_path(:email => user.email), :method => :post
           - elsif user.admin?
             ADMIN
             = link_to '(make normal)', toggle_admin_user_path(user), :method => :put

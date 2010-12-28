@@ -182,48 +182,120 @@ a {
 <div class="example_group">
   <dl style="margin-left: 0px;">
   <dt id="example_group_1">UserSessionsController</dt>
-    <script type="text/javascript">moveProgressBar('11.1');</script>
+    <script type="text/javascript">moveProgressBar('2.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">new action should render new template</span></dd>
-    <script type="text/javascript">moveProgressBar('22.2');</script>
+    <script type="text/javascript">moveProgressBar('5.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">create action should render new template when authentication is invalid</span></dd>
-    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <script type="text/javascript">moveProgressBar('8.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">create action should redirect when authentication is valid</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl style="margin-left: 0px;">
   <dt id="example_group_2">UsersController</dt>
-    <script type="text/javascript">moveProgressBar('44.4');</script>
+    <script type="text/javascript">moveProgressBar('11.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">new action should render new template</span></dd>
-    <script type="text/javascript">moveProgressBar('55.5');</script>
+    <script type="text/javascript">moveProgressBar('14.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">create action should render new template when model is invalid</span></dd>
-    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <script type="text/javascript">moveProgressBar('17.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">create action should redirect when model is valid</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_3">UserMailer</dt>
+  <dt id="example_group_3">GoogleMapsHelper</dt>
   </dl>
 </div>
 <div class="example_group">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_4">Welcome email</dt>
-    <script type="text/javascript">moveProgressBar('77.7');</script>
+  <dt id="example_group_4">google_map_render</dt>
+    <script type="text/javascript">moveProgressBar('20.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should initialize a google map</span></dd>
+    <script type="text/javascript">moveProgressBar('22.8');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default to zoom level 8</span></dd>
+    <script type="text/javascript">moveProgressBar('25.7');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set zoom level</span></dd>
+    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default max zoom level to 12</span></dd>
+    <script type="text/javascript">moveProgressBar('31.4');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set max zoom level</span></dd>
+    <script type="text/javascript">moveProgressBar('34.2');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should disable max zoom level</span></dd>
+    <script type="text/javascript">moveProgressBar('37.1');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set the center lat and lng</span></dd>
+    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default to full US map and zoom if lat or lng are nil</span></dd>
+    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default to roadmap type</span></dd>
+    <script type="text/javascript">moveProgressBar('45.7');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set custom skillz map type</span></dd>
+    <script type="text/javascript">moveProgressBar('48.5');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set disable pan and zoom controls</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_5">google_map_marker</dt>
+    <script type="text/javascript">moveProgressBar('51.4');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set the position lat and lng</span></dd>
+    <script type="text/javascript">moveProgressBar('54.2');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default to center of US if lat or lng are nil</span></dd>
+    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should default to flag1.png icon</span></dd>
+    <script type="text/javascript">moveProgressBar('60.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should set icon</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_6">google_map_delay_load</dt>
+    <script type="text/javascript">moveProgressBar('62.8');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should load the google maps API</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7">UserMailer</dt>
+  </dl>
+</div>
+<div class="example_group">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_8">Welcome email</dt>
+    <script type="text/javascript">moveProgressBar('65.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should deliver to the users email</span></dd>
-    <script type="text/javascript">moveProgressBar('88.8');</script>
+    <script type="text/javascript">moveProgressBar('68.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should contain a signin link in the body</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <script type="text/javascript">moveProgressBar('71.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should have Welcome subject</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_5">User</dt>
+  <dt id="example_group_9">User</dt>
+    <script type="text/javascript">moveProgressBar('74.2');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should be valid without password</span></dd>
+    <script type="text/javascript">moveProgressBar('77.1');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should require email</span></dd>
+    <script type="text/javascript">moveProgressBar('80.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should require zipcode</span></dd>
+    <script type="text/javascript">moveProgressBar('82.8');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should require password on update (progressive engagement)</span></dd>
+    <script type="text/javascript">moveProgressBar('85.7');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should not be registered when no password defined</span></dd>
+    <script type="text/javascript">moveProgressBar('88.5');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should be registered when password defined</span></dd>
+    <script type="text/javascript">moveProgressBar('91.4');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should act as mappable</span></dd>
+    <script type="text/javascript">moveProgressBar('94.2');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should convert zipcode to lat,lng when validating zipcode</span></dd>
+    <script type="text/javascript">moveProgressBar('97.1');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should validate zipcode format</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should validate zipcode is valid</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.742537 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "9 examples, 0 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1.160072 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "35 examples, 0 failures";</script>
 </div>
 </div>
 </body>

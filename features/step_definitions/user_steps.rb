@@ -2,12 +2,14 @@ module UserHelpers
   def create_user(email = nil, zipcode='03585')
     email ||= 'example@example.com'
     #@current_user ||= User.make( :username => username )
-    @current_user ||= User.create(:email => email, :zipcode => zipcode, :password => 'secret', :password_confirmation => 'secret')
+    user = User.create(:email => email, :zipcode => zipcode, :password => 'secret', :password_confirmation => 'secret')
+    @current_user ||= user
   end
   
   def create_unregistered_user(email = nil, zipcode='03585')
     email ||= 'example@example.com'
-    @current_user ||= User.create(:email => email, :zipcode => zipcode)
+    user = User.create(:email => email, :zipcode => zipcode)
+    @current_user ||= user
   end
   
   def create_admin

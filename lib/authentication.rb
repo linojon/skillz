@@ -48,6 +48,14 @@ module Authentication
       redirect_to account_url
     end
   end
+
+  def not_signin_required_unless_admin
+    if signed_in? && !admin?
+      flash[:notice] = "You must be signed out to access this page"
+      store_target_location
+      redirect_to account_url
+    end
+  end
   
   def redirect_to_target_or_default(default)
     redirect_to(session[:return_to] || default)

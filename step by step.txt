@@ -71,6 +71,34 @@ Sun Dec 26
   user.registered?
   2 step registration process
   
+  $ capify .
+  edit config/deploy.rb
+      require "bundler/capistrano"
+      ...
+  
+  create repo on github (private)
+  $ git remote add origin git@github.com:linoj/skillz.git
+  $ git push origin master
+  setup:
+    config/deploy.rb
+    Capfile
+    config/deploy.database.yml
+    config/deploy.environment.rb
+    public/deploy.htaccess
+  
+---
+server
+  dumy test app
+    $ rails new test
+    setup passenger to find test
+  
+  our app
+    now, get this to actually work on the server
+    deploy via cap
+    
+  git server on linode
+  
+  
 -----------------------------
 -----------------------------
 -----------------------------
