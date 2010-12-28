@@ -2,5 +2,5 @@ production:
   adapter: mysql
   database: skillzillion
   username: jon
-  password: secret
+  password: dbdev
   

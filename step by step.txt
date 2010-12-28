@@ -85,6 +85,33 @@ Sun Dec 26
     config/deploy.database.yml
     config/deploy.environment.rb
     public/deploy.htaccess
+    
+  [using railsdeploy account on linode]
+  [using jon's user on mysql]
+  
+  $ ssh -p5050 jon@173.255.230.204 
+		pswd: parker286lyman
+  $ ssh -p5050 railsdeploy@173.255.230.204 
+	  pswd: webbyDevvy80$
+  
+  setup key to ssh to linode without password
+    $ cat ~/.ssh/id_dsa.pub
+    copy to clipboard
+    ssh into the account
+    edit ~/.ssh/authorized_keys
+    paste from clipboard
+    Login to ssh into the site
+  
+  setup key so linode can log into github private repo 
+  # ssh-keygen -t dsa
+		press enter for file name, and blank passphrases
+	# cat ~/.ssh/id_dsa.pub
+		copy into clipboard
+		paste into github (admin/deploy keys)
+	
+  $ cap deploy:setup
+  $ cap deploy:cold
+  
   
 ---
 server

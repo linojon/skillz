@@ -1,12 +1,14 @@
 # automatically run bundler in server
 require "bundler/capistrano"
 
-set :user, 'deploy'
+set :user, 'railsdeploy'
 set :application, "skillz"
-set :domain, "www.skillzillion.com"
+set :domain, "173.255.230.204"  # "www.skillzillion.com"
+set :port, '5050'
 
 set :scm, :git
-set :repository, "git://github.com/linoj/skillz.git"
+set :repository, "git@github.com:linoj/skillz.git" # "git://github.com/linoj/skillz.git"
+
 
 # ref: http://epochwolf.com/capistrano-use-git-repository-on-the-same-ser
 # http://stackoverflow.com/questions/2293212/capistrano-git-repository-local-to-production-server
@@ -14,12 +16,14 @@ set :repository, "git://github.com/linoj/skillz.git"
 #set :local_repository, "file://." #or "nameOfHostFromSSHConfig:/srv/git/myapp.git"
 #remove the deploy_via copy line as well.
 
-set :deploy_via, :checkout
+set :deploy_via, :remote_cache
+#set :git_shallow_clone, 1
 
 set :scm_username, 'linoj'
-set :scm_password, 'jonathan'
+#set :scm_password, 'jonathan'
+ssh_options[:forward_agent] = true
+
 set :branch, :master
-set :git_shallow_clone, 1
 default_run_options[:pty] = true
 
 set :use_sudo, false
