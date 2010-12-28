@@ -26,13 +26,13 @@ module GoogleMapsHelper
       :disableDefaultUI  => true,
       :mapTypeControl    => false,       # eg street, satellite, etc
       :navigationControl => true,        # zoom buttons
-      :scaleControl      => false,       #this is a view only shows feet per inch
+      :scaleControl      => false       #this is a view only shows feet per inch
     };
     if options[:pan_zoom]==false
       map_options.merge!(
         :disableDoubleClickZoom => true,
         :draggable              => false,
-        :navigationControl      => false,
+        :navigationControl      => false
       )
     end
     max_zoom = options[:max_zoom] || 12
