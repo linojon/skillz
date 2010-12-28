@@ -15,7 +15,6 @@ class UserProfile < ActiveRecord::Migration
     end
     
     add_index  :users, [:lat, :lng]
-    
   end
 
   def self.down
@@ -27,8 +26,7 @@ class UserProfile < ActiveRecord::Migration
       t.remove     :lat
       t.remove     :lng
     end
+    
+    remove_index  :users, [:lat, :lng]
   end
-  
-  remove_index  :users, [:lat, :lng]
-  
 end

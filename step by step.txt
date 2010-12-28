@@ -123,42 +123,48 @@ Sun Dec 26
   # bundle install
   => errors
   $ cap deploy
+  # rm -rf .bundle
   # bundle install
+  
   # rake RAILS_ENV=production rb:migrate
   => !!! Missing the mysql2 gem. Add it to your Gemfile: gem 'mysql2'
+  still even after adding it, changed to
+      gem 'mysql'
+  # rake RAILS_ENV=production rb:migrate
   
-   
+  edit /etc/apache2/sites-available/default
+    set DocumentRoot path
+  # sudo /etc/init.d/apache2 restart
   
----
-server
-  dumy test app
-    $ rails new test
-    setup passenger to find test
-  
-  our app
-    now, get this to actually work on the server
-    deploy via cap
-    
-  git server on linode
+  .rvmrc use 1.9.2-head (vs 1.9.2)
   
   
 -----------------------------
------------------------------
------------------------------
------------------------------
------------------------------
------------------------------
------------------------------
------------------------------
-google.maps.event.addListener(map, 'zoom_changed', function() { 
-				  if (map.getZoom() > 16) { 
-				    map.setZoom(16); 
-				  } 
-				}); 
+Tues Dec 28
 
-			
-            }
+  public/robots.txt
+  public/.htaccess
+  .htpasswd
+    user: skillzillion
+    pswd: j0bsj0bs
+  google webmaster tools
+    <meta name="google-site-verification" content="us3drJFBRsnv55_ikbrM72Yep4h2uzcSC6SBE4iwMeI" />
+
+  [password prot not working]
   
+  $ cap deploy:web:disable
+  added code to .htaccess
+  
+  [not working, $ cp system/maintenance.html index.html ]
+  
+
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
 .
 = f.error_messages, :header_message => "Invalid product!",
     :message => "You'll need to fix the following fields:",
